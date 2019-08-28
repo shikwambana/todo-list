@@ -1,0 +1,11 @@
+{
+    "artId": "",
+    "appName": "todo-list",
+    "description": "to do list",
+    "lastModified": "2019-08-21T12:27:26.636Z",
+    "artURL": "http://localhost:3000/bhive-art/",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "dataSource": "neutrinos-delivery-rt",
+    "createDate": "2019-08-21T12:27:26.635Z"
+}

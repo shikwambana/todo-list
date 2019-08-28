@@ -1,0 +1,13 @@
+{
+    "appPageId": "ac81dbb5-df2b-0e62-9e20-36c64361a972",
+    "appPageName": "todo",
+    "componentName": "todoComponent",
+    "selectorName": "bh-todo",
+    "htmlFileName": "todo.template.html",
+    "tsFileName": "todo.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

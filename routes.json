@@ -1,0 +1,22 @@
+{
+    "routes": [
+        {
+            "component": "listComponent",
+            "path": "list"
+        },
+        {
+            "component": "todoComponent",
+            "path": "togo"
+        },
+        {
+            "path": "''",
+            "redirectTo": "/list",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

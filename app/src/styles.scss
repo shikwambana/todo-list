@@ -1,0 +1,47 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+// body {
+//     // padding: 0 30px;
+//     background: darkslategrey;
+//     color: white;
+// }
+
+.list {
+    padding: 0 30px;
+}
+.add button {
+    background-color: forestgreen;
+    color: white;
+}
+
+.add {
+        width: 100%;
+        padding: 0 30px;
+        background: #3d7747;
+            bottom: 0;
+    position: absolute;
+}
+
+// .text {
+//     // border: 1px grey solid;
+//     // border-radius: 5px;
+// }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown .5s;
+}

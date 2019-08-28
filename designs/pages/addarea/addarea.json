@@ -1,0 +1,13 @@
+{
+    "appPageId": "4f6ce511-104f-3699-2daa-5a46947a04e3",
+    "appPageName": "addarea",
+    "componentName": "addareaComponent",
+    "selectorName": "bh-addarea",
+    "htmlFileName": "addarea.template.html",
+    "tsFileName": "addarea.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

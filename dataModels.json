@@ -1,0 +1,92 @@
+{
+    "f390167c-ca6d-aa07-4412-48bffd075a02": {
+        "dataModelId": "f390167c-ca6d-aa07-4412-48bffd075a02",
+        "name": "area",
+        "description": "what area of your life you want to improve on",
+        "dataSource": "neutrinos-delivery-rt",
+        "fields": [
+            {
+                "name": "name",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "description",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "startDate",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "endDate",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "task",
+                "fieldType": 5,
+                "isArray": true,
+                "complexTypeName": "task",
+                "complexTypeId": "fbc04a44-fce8-78ef-88bb-cb2ff1eedfb0",
+                "type": "task"
+            },
+            {
+                "name": "id",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    },
+    "fbc04a44-fce8-78ef-88bb-cb2ff1eedfb0": {
+        "dataModelId": "fbc04a44-fce8-78ef-88bb-cb2ff1eedfb0",
+        "name": "task",
+        "description": "the task you want to do to get closer to your goal",
+        "dataSource": "neutrinos-delivery-rt",
+        "fields": [
+            {
+                "name": "name",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "description",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "startDate",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "endDate",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "status",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    }
+}

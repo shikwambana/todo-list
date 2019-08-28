@@ -1,0 +1,17 @@
+{
+    "7ff3f6a7-dd7e-3c1e-f778-5ed0af7cb55b": {
+        "appPageName": "list",
+        "componentName": "listComponent",
+        "isEntry": false
+    },
+    "ac81dbb5-df2b-0e62-9e20-36c64361a972": {
+        "appPageName": "todo",
+        "componentName": "todoComponent",
+        "isEntry": false
+    },
+    "4f6ce511-104f-3699-2daa-5a46947a04e3": {
+        "appPageName": "addarea",
+        "componentName": "addareaComponent",
+        "isEntry": false
+    }
+}

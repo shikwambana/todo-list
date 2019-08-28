@@ -1,0 +1,22 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" style="    width: 100%;" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" style="width : 100%" class="list" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" class="fadeInDown" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false" *ngFor="let item of items">
+        <p> {{item}}</p>
+        <mat-icon (click)="deleteItem(item)">clear</mat-icon>
+      </div>
+      <mat-grid-list *ngIf="items">
+        <mat-list-item *ngFor="let item of items"></mat-list-item>
+      </mat-grid-list>
+    </div>
+    <div fxLayout="column wrap" class="add" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <mat-form-field class="text" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput [(ngModel)]="item" placeholder="Add to do" required (keyup.enter)="add()">
+
+        </mat-form-field><button mat-raised-button (click)="add()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
