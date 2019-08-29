@@ -4,17 +4,18 @@ import { ModelMethods } from '../../lib/model.methods';
 // import { BDataModelService } from '../service/bDataModel.service';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
+import { listService } from "../../services/list/list.service";
 
 /**
  * Service import Example :
  * import { HeroService } from '../../services/hero/hero.service';
  */
 
- /**
- * 
- * Serivice Designer import Example - Service Name - HeroService
- * import { HeroService } from 'app/sd-services/HeroService';
- */
+/**
+* 
+* Serivice Designer import Example - Service Name - HeroService
+* import { HeroService } from 'app/sd-services/HeroService';
+*/
 
 @Component({
     selector: 'bh-todo',
@@ -23,19 +24,35 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 
 export class todoComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
+    areas;
+    show = false;
+    item;
+    areaID;
+    tasks;
+    status = ['Not Started', 'In Progress', 'Abandoned', 'Complete']
 
-    item
-    constructor(private bdms: NDataModelService) {
+    constructor(private bdms: NDataModelService,
+        private listService: listService) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
-
+        this.areas = this.listService.getAreas();
     }
 
-    add(){
-        console.log(this.item)
+    display(area){
+        console.log(area)
+        this.tasks = area.task;
+    }
+
+    change(){
+        this.show = !this.show
+    }
+
+    add() {
+        this.listService.addTask(this.dm.task,this.areaID);
+        this.change();
     }
     get(dataModelName, filter?, keys?, sort?, pagenumber?, pagesize?) {
         this.mm.get(dataModelName, filter, keys, sort, pagenumber, pagesize,
@@ -89,7 +106,7 @@ export class todoComponent extends NBaseComponent implements OnInit {
             })
     }
 
-    delete (dataModelName, filter) {
+    delete(dataModelName, filter) {
         this.mm.delete(dataModelName, filter,
             result => {
                 // On Success code here

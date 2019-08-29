@@ -6,11 +6,15 @@
         },
         {
             "component": "todoComponent",
-            "path": "togo"
+            "path": "todo"
+        },
+        {
+            "path": "home",
+            "component": "addareaComponent"
         },
         {
             "path": "''",
-            "redirectTo": "/list",
+            "redirectTo": "/home",
             "pathMatch": "full",
             "default": true
         },

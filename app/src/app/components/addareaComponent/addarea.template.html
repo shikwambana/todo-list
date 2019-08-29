@@ -1,1 +1,60 @@
-<div>default page template</div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="    width: 100%;" class="top" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <h2> Areas of Growth</h2>
+    </div>
+    <div fxLayout="column wrap" class="content" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="areas">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-card *ngFor="let area of areas" routerLink="../todo" class="fadeInDown cardArea">
+          <mat-card-title>{{area.name}}</mat-card-title>
+
+          <mat-card-subtitle>{{area.description}}</mat-card-subtitle>
+
+          <mat-card-content></mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="z-index: 999" class="add slideInUp" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="show">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+          <h2> Add an Area</h2>
+          <mat-icon (click)="change()">remove</mat-icon>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field class="text" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput [(ngModel)]="dm.area.name" placeholder="Name of Area" required (keyup.enter)="add()">
+
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="dm.area.description" placeholder="Description" required></textarea>
+        </mat-form-field>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
+            <mat-form-field style="width: 110px;">
+              <input matInput placeholder="Start Date " [matDatepicker]="picker1" [(ngModel)]="dm.area.starDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <mat-form-field style="width: 110px;">
+              <input matInput placeholder="End Date " [matDatepicker]="picker2" [(ngModel)]="dm.area.endDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" style="    margin: 5px 0 10px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="add()" [disabled]="!dm.area.name || !dm.area.description">Add</button></div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="add" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!show">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <h2> Add an Area</h2>
+        <mat-icon (click)="change()">add</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,4 +21,7 @@ export class area {
   @JsonProperty('id', String, true)
   public id: string = undefined;
 
+  @JsonProperty('status', String, true)
+  public status: string = undefined;
+
 }

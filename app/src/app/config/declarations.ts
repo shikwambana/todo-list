@@ -91,5 +91,5 @@ listService,
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'list', component: listComponent},{path: 'togo', component: todoComponent},{path: '', redirectTo: '/list', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'list', component: listComponent},{path: 'todo', component: todoComponent},{path: 'home', component: addareaComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

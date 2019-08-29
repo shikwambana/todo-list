@@ -4,7 +4,7 @@ import { ModelMethods } from '../../lib/model.methods';
 // import { BDataModelService } from '../service/bDataModel.service';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-
+import { listService } from "../../services/list/list.service";
 /**
  * Service import Example :
  * import { HeroService } from '../../services/hero/hero.service';
@@ -23,14 +23,31 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 
 export class addareaComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
-
-    constructor(private bdms: NDataModelService) {
+    areas;
+    show = false;
+    name : string;
+    constructor(private bdms: NDataModelService,
+        private listService : listService) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
 
+        this.areas = this.listService.getAreas();
+
+    }
+
+    change(){
+        this.show = !this.show
+    }
+
+    add(){
+        this.dm.area.id = this.listService.makeid();
+        this.dm.area.status = 'Not Started';
+        this.listService.addArea(this.dm.area)
+        this.areas = this.listService.getAreas();
+        this.change();
     }
 
     get(dataModelName, filter?, keys?, sort?, pagenumber?, pagesize?) {

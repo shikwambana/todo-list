@@ -2,6 +2,13 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import "css/animations.scss";
+
+$primary : #003038;
+$secondary : #315962;
+$light : #315962;
+$dark : #000812;
 
 // body {
 //     // padding: 0 30px;
@@ -9,20 +16,37 @@
 //     color: white;
 // }
 
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .list {
     padding: 0 30px;
 }
 .add button {
-    background-color: forestgreen;
+    background-color: $primary;
     color: white;
 }
 
 .add {
-        width: 100%;
-        padding: 0 30px;
-        background: #3d7747;
-            bottom: 0;
+    // width: 100%;
+    padding: 0 33px;
+    bottom: 0px;
     position: absolute;
+    margin: -5px 5px;
+    box-shadow: 0px -1px 9px -5px black;
+    width: 97%;
+    background: white;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+}
+
+.content {
+  margin-top: 75px;
 }
 
 // .text {
@@ -30,18 +54,9 @@
 //     // border-radius: 5px;
 // }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+.cardArea {
+  width: 35%;
+  margin: 8px;
+  box-shadow: 0 2px 4px 0.5px #777777ad !important;
 }
 
-.fadeInDown {
-  animation: fadeInDown .5s;
-}
