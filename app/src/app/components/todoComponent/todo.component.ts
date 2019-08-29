@@ -5,6 +5,7 @@ import { ModelMethods } from '../../lib/model.methods';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { listService } from "../../services/list/list.service";
+import { task } from '../../models';
 
 /**
  * Service import Example :
@@ -29,6 +30,8 @@ export class todoComponent extends NBaseComponent implements OnInit {
     item;
     areaID;
     tasks;
+    currentAreaID;
+    currentArea;
     status = ['Not Started', 'In Progress', 'Abandoned', 'Complete']
 
     constructor(private bdms: NDataModelService,
@@ -39,21 +42,51 @@ export class todoComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
         this.areas = this.listService.getAreas();
+        this.currentArea = JSON.parse(sessionStorage.getItem('current'))
+        if (this.currentArea) {
+            this.display(this.currentArea)
+
+        }
     }
 
-    display(area){
+    display(area) {
         console.log(area)
         this.tasks = area.task;
+        this.currentAreaID = area.id;
+        this.currentArea = area;
+        sessionStorage.setItem('current', JSON.stringify(this.currentArea));
     }
 
-    change(){
+    change() {
         this.show = !this.show
     }
 
     add() {
-        this.listService.addTask(this.dm.task,this.areaID);
+        this.dm.task.id = this.listService.makeid();
+        this.dm.task.status = "Not Started";
+        this.listService.addTask(this.dm.task, this.areaID);
         this.change();
+        this.areas = this.listService.getAreas();
+        for (var i = 0; i < this.areas.length; i++) {
+            if (this.areas[i].id === this.areaID) {
+                this.display(this.areas[i]);
+            }
+        }
+
+        this.dm.task = new task();
     }
+
+    removeTask(task) {
+        this.listService.removeTask(task, this.currentAreaID);
+
+        this.areas = this.listService.getAreas();
+        for (var i = 0; i < this.areas.length; i++) {
+            if (this.areas[i].id === this.currentAreaID) {
+                this.display(this.areas[i]);
+            }
+        }
+    }
+
     get(dataModelName, filter?, keys?, sort?, pagenumber?, pagesize?) {
         this.mm.get(dataModelName, filter, keys, sort, pagenumber, pagesize,
             result => {

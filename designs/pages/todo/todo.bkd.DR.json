@@ -209,13 +209,13 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "    width: 100%;",
+                            "_value": "    width: 100%; margin-bottom: 5px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": "colorful",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -341,7 +341,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "z-index:99",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -353,7 +353,7 @@
                                 },
                                 {
                                     "_key": "fxFlex",
-                                    "_value": "10",
+                                    "_value": "15",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -463,7 +463,7 @@
                                 },
                                 {
                                     "_key": "fxFlex",
-                                    "_value": "90",
+                                    "_value": "85",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -511,7 +511,7 @@
                                 "designerReference": [
                                     {
                                         "_key": "style",
-                                        "_value": "    text-align: center;",
+                                        "_value": "    text-align: center;    margin-left: -30px;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -998,6 +998,49 @@
                                     }
                                 ]
                             }
+                        },
+                        "9014474b-5b1a-bc6e-c6a4-bed17a7d59a5": {
+                            "paletteKey": "NG-icon",
+                            "parentEditorKey": "cf96dd32-01ae-2eaf-2a87-c2907f8296a5",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "IconName",
+                                    "_value": "clear",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "[inline]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "color",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(click)",
+                                    "_value": "removeTask(task)",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
+                                }
+                            ]
                         }
                     }
                 }
@@ -1250,7 +1293,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "Add an Area",
+                                        "_value": "Add ToDo",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -2366,7 +2409,7 @@
                                 },
                                 {
                                     "_key": "[disabled]",
-                                    "_value": "!dm.task.name || !dm.task.description",
+                                    "_value": "!dm.task.name || !areaID",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "_customAttributeFlag": true
@@ -2413,7 +2456,7 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "add",
+                        "_value": "add colorful",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

@@ -1,11 +1,11 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="    width: 100%;" class="top" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="    width: 100%;" class="top colorful" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
       <h2> Areas of Growth</h2>
     </div>
     <div fxLayout="column wrap" class="content" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="areas">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <mat-card *ngFor="let area of areas" routerLink="../todo" class="fadeInDown cardArea">
+        <mat-card *ngFor="let area of areas" routerLink="../todo" class="fadeInDown cardArea colorful">
           <mat-card-title>{{area.name}}</mat-card-title>
 
           <mat-card-subtitle>{{area.description}}</mat-card-subtitle>
@@ -50,7 +50,7 @@
         <div fxLayout="column wrap" style="    margin: 5px 0 10px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="add()" [disabled]="!dm.area.name || !dm.area.description">Add</button></div>
       </div>
     </div>
-    <div fxLayout="column wrap" class="add" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!show">
+    <div fxLayout="column wrap" class="add colorful" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!show">
       <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
         <h2> Add an Area</h2>
         <mat-icon (click)="change()">add</mat-icon>

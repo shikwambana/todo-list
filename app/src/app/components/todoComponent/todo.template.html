@@ -1,13 +1,13 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="    width: 100%;" class="top" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="    width: 100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="    width: 100%; margin-bottom: 5px" class="colorful" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" style="z-index:99" fxFlex="15" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
             <mat-icon routerLink="../home">arrow_back</mat-icon>
           </div>
-          <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
-            <h2 style="    text-align: center;"> ToDos</h2>
+          <div fxLayout="column wrap" fxFlex="85" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
+            <h2 style="    text-align: center;    margin-left: -30px;"> ToDos</h2>
           </div>
         </div>
       </div>
@@ -25,13 +25,14 @@
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngFor="let task of tasks">
         <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
           <h4> {{task.name}}</h4>
+          <mat-icon (click)="removeTask(task)">clear</mat-icon>
         </div>
       </div>
     </div>
     <div fxLayout="column wrap" style="z-index: 999" class="add slideInUp" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="show">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-          <h2> Add an Area</h2>
+          <h2> Add ToDo</h2>
           <mat-icon (click)="change()">remove</mat-icon>
         </div>
       </div>
@@ -69,10 +70,10 @@
             </mat-form-field>
           </div>
         </div>
-        <div fxLayout="column wrap" style="    margin: 5px 0 10px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="add()" [disabled]="!dm.task.name || !dm.task.description">Add</button></div>
+        <div fxLayout="column wrap" style="    margin: 5px 0 10px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="add()" [disabled]="!dm.task.name || !areaID">Add</button></div>
       </div>
     </div>
-    <div fxLayout="column wrap" class="add" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!show">
+    <div fxLayout="column wrap" class="add colorful" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!show">
       <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
         <h2> Add ToDo</h2>
         <mat-icon (click)="change()">add</mat-icon>

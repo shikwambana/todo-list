@@ -155,7 +155,7 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "top",
+                        "_value": "top colorful",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -412,7 +412,7 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "fadeInDown cardArea",
+                                "_value": "fadeInDown cardArea colorful",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1773,7 +1773,7 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "add",
+                        "_value": "add colorful",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

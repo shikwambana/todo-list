@@ -53,6 +53,25 @@ export class listService {
         
     }
 
+
+    removeTask(task,areaID){
+        let areas = this.getAreas();
+        console.log(areas)
+        for (var i = 0; i < areas.length; i++) {
+            if (areas[i].id == areaID) {
+                for(var j = 0; j < areas[j].task.length; j++){
+                    if(task.id === areas[i].task[j].id){
+                        areas[i].task.splice(j,1)
+                    }
+                }
+                this.notify('Task removed');
+            }
+        }
+        console.log(areas)
+
+        this.storeData(areas)
+    }
+
     getAreas() {
         return JSON.parse(localStorage.getItem('list'))
     }

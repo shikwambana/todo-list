@@ -14,9 +14,10 @@
         },
         {
             "path": "''",
-            "redirectTo": "/home",
+            "redirectTo": "/todo",
             "pathMatch": "full",
-            "default": true
+            "default": true,
+            "component": ""
         },
         {
             "path": "**",

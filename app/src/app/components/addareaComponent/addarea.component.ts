@@ -35,6 +35,9 @@ export class addareaComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
 
         this.areas = this.listService.getAreas();
+        if(!this.areas){
+            this.show = !this.show;
+        }
 
     }
 
